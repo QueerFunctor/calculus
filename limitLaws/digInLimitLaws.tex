@@ -10,8 +10,30 @@
 We give basic laws for working with limits. 
 \end{abstract}
 \maketitle
+In the previous section were able to compute the limits
 
-In this section, we present a handful of rules called the \textit{Limit Laws}
+\[
+\lim_{x\to \pi} x^3=\pi^3,\quad\lim_{x\to \pi} \sqrt{2}=\sqrt{2},\quad\lim_{x\to \pi} \cos{x}= -1,
+\]
+
+using continuity of the functions $x^3$, $\sqrt{2}$, and $\cos{x}$, at
+$x=\pi$.  Does this imply that we can compute the limits
+\begin{align*}
+  &\lim_{x\to \pi} (x^3-\cos{x}),\\
+  &\lim_{x\to \pi} \frac{\sqrt{2}}{\cos{x}},\\
+  &\lim_{x\to \pi} (\sqrt{2}\cdot x^3\cdot\cos{x}), \text{ or}\\
+  &\lim_{x\to \pi} \cos({x^3})?
+\end{align*}
+
+Well, we cannot use continuity here, because we don't know if the
+functions $x^3-\cos{x}$, $\frac{\sqrt{2}}{\cos{x}}$, $\sqrt{2}\cdot
+x^3\cdot\cos{x}$, and $\cos({x^3})$ are continuous at $x=\pi$, and
+
+ we have no other tools available, since the graphs and tables are not reliable. Obviously, we need more tools to help us with computation of limits.
+
+ 
+
+In this section, we present a handful of rules, called the \textit{Limit Laws},
 that allow us to find limits of various combinations of functions.
 
 \begin{theorem}[Limit Laws]\index{limit laws}\label{theorem:limit-laws}
@@ -29,37 +51,81 @@ Suppose that $\lim_{x\to a}f(x)=L$, $\lim_{x\to a}g(x)=M$.
 \label{thm:limit laws}
 \end{theorem}
 
-\begin{question}
-  True or false: If $f$ and $g$ are continuous functions on an
-  interval $I$, then $f\pm g$ is continuous on $I$.
-  \begin{multipleChoice}
-    \choice[correct]{True}
-    \choice{False}
-  \end{multipleChoice}
-  \begin{feedback}
-    This follows from the Sum/Difference Law.
-  \end{feedback}
-\end{question}
+In plain language, ``limit of a sum equals the sum of the limits,'' ``limit of a product equals the product of the limits,'' etc.
 
-\begin{question}
-  True or false: If $f$ and $g$ are continuous functions on an
-  interval $I$, then $f/g$ is continuous on $I$.
-  \begin{multipleChoice}
-    \choice{True}
-    \choice[correct]{False}
-  \end{multipleChoice}
-  \begin{feedback}
-    In this case, $f/g$ will not be continuous for $x$ where $g(x) =
-    0$.
-  \end{feedback}
-\end{question}
+Let's examine how the Limit Laws can be used in computation of limits.
+%begin{question}
+  %True or false: If $f$ and $g$ are continuous functions on an
+  %interval $I$, then $f\pm g$ is continuous on $I$.
+  %\begin{multipleChoice}
+   % \choice[correct]{True}
+  %  \choice{False}
+ % \end{multipleChoice}
+ % \begin{feedback}
+    %This follows from the Sum/Difference Law.
+ % \end{feedback}
+%\end{question}
+
+%\begin{question}
+ % True or false: If $f$ and $g$ are continuous functions on an
+ % interval $I$, then $f/g$ is continuous on $I$.
+ % \begin{multipleChoice}
+    %\choice{True}
+   % \choice[correct]{False}
+ % \end{multipleChoice}
+ % \begin{feedback}
+   % In this case, $f/g$ will not be continuous for $x$ where $g(x) =
+    %0$.
+ % \end{feedback}
+%\end{question}
 
 
 \begin{example}
-  Compute the following limit using limit laws:
-  \[
+  Compute the following limits using Limit Laws:
+  \begin{enumerate}
+  \item\label{lle1a} $\lim_{x\to \pi} (x^3-\cos{x})$
+  \item\label{lle1b} $\lim_{x\to \pi} \frac{\sqrt{2}}{\cos{x}}$
+  \item\label{lle1c} $\lim_{x\to \pi} (\sqrt{2}\cdot x^3\cdot\cos{x})$
+  \item\label{lle1d} $\lim_{x\to \pi} \cos({x^3})$
+  \end{enumerate}
+  \begin{explanation}
+    For $\lim_{x\to \pi} (x^3-\cos{x})$, write:
+    \begin{align*}
+      \lim_{x\to \pi} (x^3-\cos{x})&=\lim_{x\to \pi} x^3-\lim_{x\to \pi}\cos{x} && \text{by Difference Law}\\
+      &=\pi^3-(-1)\\
+      &=\pi^3+1
+    \end{align*}
+    For $\lim_{x\to \pi} \frac{\sqrt{2}}{\cos{x}}$, write:
+    \begin{align*}
+      \lim_{x\to \pi} \frac{\sqrt{2}}{\cos{x}}&=\frac{\lim_{x\to \pi}\sqrt{2}}{\lim_{x\to \pi}\cos{x}} && \text{by Quotient Law}\\
+      &=\frac{\sqrt{2}}{-1}\\
+      &=-\sqrt{2}
+    \end{align*}
+    For $\lim_{x\to \pi} (\sqrt{2}\cdot x^3\cdot\cos{x})$, using the Product Law, we can write:
+    \[
+    \lim_{x\to \pi} (\sqrt{2}\cdot x^3\cdot\cos{x})=\lim_{x\to \pi} \sqrt{2}\cdot \lim_{x\to \pi}x^3\cdot \lim_{x\to \pi}\cos{x}
+    \]
+    \begin{align*}
+      &=\sqrt{2}\cdot \pi^3\cdot(-1)\\
+      &=-\sqrt{2}\pi^3
+    \end{align*}
+    For $\lim_{x\to \pi} \cos({x^3})$, write:
+    \[
+    \lim_{x\to \pi} \cos({x^3})= \cdots 
+    \]
+    The function $\cos({x^3})$ is a combination of the functions
+    $\cos({x})$ and $x^3$, but it is neither a sum/difference, nor a
+    product, nor a quotient of these two functions, so we cannot apply
+    any of the Limit Laws. This function is a composition of the two
+    functions, $\cos({x})$ and $x^3$.
+  \end{explanation}
+\end{example}
+\begin{example}
+\begin{enumerate}
+\item  Compute the following limit using limit laws:
+\[
   \lim_{x\to 1}(5x^2+3x-2)
-  \]
+\]
 \begin{explanation}
   Well, get out your pencil and write with me:
   \[
@@ -69,7 +135,7 @@ Suppose that $\lim_{x\to a}f(x)=L$, $\lim_{x\to a}g(x)=M$.
   \[
   = 5\lim_{x\to 1} x^2 + 3\lim_{x\to 1} x - \lim_{x\to 1}\answer[given]{2}
   \]
-  by the Product Law. Finally by continuity of $x^k$ and $k$,
+  by the Product Law. Finally by continuity of $x^b$ and $k$,
   \[
   = 5(1)^2 + 3(1) - 2 =\answer[given]{6}.
   \]
@@ -80,26 +146,74 @@ Suppose that $\lim_{x\to a}f(x)=L$, $\lim_{x\to a}g(x)=M$.
     \]
   \end{onlineOnly}
 \end{explanation}  
+\item Is the polynomial function  $f(x)=5x^2+3x-2$ continuous at $x=1$?
+\begin{explanation}
+We have to check whether
+\[
+ \lim_{x\to 1} f(x)=f(1). 
+\]
+Since we already know that $ \lim_{x\to 1} (5x^2+3x-2)=6$,  we only have  to compute $f(1)$.
+\begin{align*}
+f(1)&=5(1)^2 + 3(1) - 2\\
+&=6
+\end{align*}
+Therefore, the polynomial function $f$ is continuous at $x=1$.
+
+But what about continuity at any other value $x$? Is the function $f$ continuous on its entire domain?
+
+And what about any other polynomial function?
+
+Are polynomials continuous on their domains?
+\end{explanation}
+\end{enumerate}
 \end{example}
 
 We can generalize the example above to get the following theorems.
 
 \begin{theorem}[Continuity of Polynomial Functions]\index{continuity of polynomial functions}
-  All polynomial functions, meaning functions of the form
+ \textbf{All polynomial functions}, meaning functions of the form
   \[
   f(x) = a_nx^n + a_{n-1}x^{n-1} + \dots + a_1 x + a_0
   \]
-  where $n$ is a whole number and each $a_i$ is a real number, are
-  continuous for all real numbers.
+  where $n$ is a positive integer  and each coefficient $a_i$, $i=0, 1,...,n$, is a real number, are
+  \textbf{continuous for all real numbers}.
+  \begin{explanation}
+  In order to show that any polynomial, $f$, is continuous at any real number, $a$, we have to show that
+  \[
+  \lim_{x\to a} f(x)=f(a).
+  \]
+  Write with me:
+  \[
+  \lim_{x\to a} f(x) = \lim_{x\to a} (a_nx^n + a_{n-1}x^{n-1} + \dots + a_1 x + a_0 )
+  \]
+  Now by the Sum Law,
+  \[
+  = \lim_{x\to a} a_nx^n + \lim_{x\to a} a_{n-1}x^{n-1} + \dots +  \lim_{x\to a}a_1 x + \lim_{x\to a} a_0
+  \]
+  and by the Product Law,
+  \begin{align*}
+    = \lim_{x\to a} a_n\cdot \lim_{x\to a}x^n + \lim_{x\to a} a_{n-1}\cdot \lim_{x\to a}x^{n-1} &+ \dots\\
+    &+  \lim_{x\to a}a_1 \cdot \lim_{x\to a}x + \lim_{x\to a} a_0
+  \end{align*}
+  and by Continuity
+  \[
+  = a_n\cdot a^n +  a_{n-1}\cdot a^{n-1} + \dots + a_1 \cdot a + a_0
+  \]
+  And this equals\dots
+  \[
+  =f(a)
+  \]
+  Since we have shown that $\lim_{x\to a} f(x) = f(a)$, we have
+  shown that $f$ is continuous at $x=a$.
+\end{explanation}
 \end{theorem}
 
 \begin{theorem}[Continuity of Rational Functions]\index{continuity of rational functions}
-  Let $f$ and $g$ be polynomials.  Then a rational function, meaning an
-  expression of the form
+   A \textbf{rational function} h, meaning a function of the form 
   \[
-  h=\frac{f}{g}
+  h(x)=\frac{f(x)}{g(x)}
   \]
-  is continuous for all real numbers except where $g(x)=0$.  That is,
+  where $f $and $g$ are polynomials, is \textbf{continuous} for all real numbers except where $g(x)=0$.  That is,
   rational functions are continuous wherever they are defined.
 \begin{explanation}
       Let $a$ be a real number such that $g(a)\neq 0$.  Then, since
@@ -123,20 +237,72 @@ We can generalize the example above to get the following theorems.
 
 \begin{question}
   Where is $f(x) = \frac{x^2-3x+2}{x-2}$ continuous?
+  \begin{prompt}
   \begin{multipleChoice}
     \choice{for all real numbers}
     \choice{at $x=2$}
     \choice[correct]{for all real numbers, except $x=2$}
     \choice{impossible to say}
   \end{multipleChoice}
+  \end{prompt}
+\end{question}
+\begin{question}
+  True or false: If $f$ and $g$ are continuous functions on an
+  interval $I$, then $f\pm g$ is continuous on $I$.
+  \begin{prompt}
+  \begin{multipleChoice}
+    \choice[correct]{True}
+    \choice{False}
+  \end{multipleChoice}
+  \begin{feedback}
+     Let's assume that $I$ is an open interval and $a$ is a number in $I$. Remember, since $f$ and $g$ are both continuous on $I$, they are both continuous at $a$. 
+     
+     This means that $ \lim_{x\to a}f(x)=f(a)$ and $ \lim_{x\to a}g(x)=g(a)$.
+     
+      Now, define a new function, $h$, where $h(x)= f(x)+g(x)$, for all $x$ in $I$. We have to show that $h$ is continuous at $a$, or that
+    
+    \[
+    \lim_{x\to a} h(x) = h(a).
+    \]
+    Lat's start with
+     
+    \[
+    \lim_{x\to a} h(x) =  \lim_{x\to a} (f(x)+g(x)) = \lim_{x\to a} f(x)+\lim_{x\to a}g(x)\hspace{0.04in}by \hspace{0.04in}Sum\hspace{0.04in} Law,
+    \]
+    and, therefore,
+    
+     \[
+    \lim_{x\to a} h(x) =  f(a)+g(a)=h(a) \checkmark
+    \]
+We have proved that $h$ is continuous at  any number $a$ in $I$. Therefore, $h$ is continuous on $I$.
+Similarly, we can prove that $f+g$ is continuous on any interval $I$, by showing it is left-or right-continuous at the endpoints.
+We can adjust the proof for the function $f-g$.
+  \end{feedback}
+  \end{prompt}
+\end{question}
+
+\begin{question}
+  True or false: If $f$ and $g$ are continuous functions on an
+  interval $I$, then $f/g$ is continuous on $I$.
+  \begin{prompt}
+  \begin{multipleChoice}
+    \choice{True}
+    \choice[correct]{False}
+  \end{multipleChoice}
+  \begin{feedback}
+    In this case, $f/g$ will not be continuous for $x$ where $g(x) =
+    0$.
+  \end{feedback}
+  \end{prompt}
 \end{question}
 
 
-Now, we give basic rules for how limits interact with composition
+We still don't know how to compute  a limit of a composition of two functions.
+Our next theorem provides basic rules for how limits interact with composition
 of functions.
 
 \begin{theorem}[Composition Limit Law]\index{composition limit law}
-  If $f(x)$ is continuous at $x = \lim_{x\to a} g(x)$, then
+  If $f(x)$ is continuous at $b = \lim_{x\to a} g(x)$, then
   \[
   \lim_{x\to a} f(g(x)) = f(\lim_{x\to a} g(x)).
   \]
@@ -146,29 +312,36 @@ Because the limit of a continuous function is the same as the function
 value, we can now pass limits inside continuous functions.
 
 \begin{corollary}[Continuity of Composite Functions]
-If $g$ is continuous at $x=a$, then $f(g(x))$ is continuous at $x=a$.
-\end{corollary}
 
+If $g$ is continuous at $x=a$, and if $f $ is continuous at $g(a)$,  then $f(g(x))$ is continuous at $x=a$.
+
+
+
+\end{corollary}
+Using the Composition Limit Law, we can compute the last example from the beginning of this section.
 \begin{example}
   Compute the following limit using limit laws:
   \[
-  \lim_{x \to 0} \sqrt{\cos(x)}
+  \lim_{x \to \pi}\cos({x^3})
   \]
   \begin{explanation}
-    By continuity of $x^k$, assuming $\lim_{x \to 0} \cos(x) >0$,
+  We will use the Composition Limit Law. 
+Let
+ \[ 
+ f(g(x))=\cos({x^3}),
+ \]
+ where $f(x)=\cos{x}$, and $g(x)=x^3$.
+  Now, continuity of $x^3$ implies that $\lim_{x \to \pi}g(x)=\pi^3$.
+    Continuity of $\cos{x}$ implies that $f$ is continuous at $\pi^3=\lim_{x \to \pi}g(x)$.
+     Now, the Composition Limit Law implies that
     \[
-    \lim_{x \to 0} \sqrt{\cos(x)} = \sqrt{\lim_{x \to 0} \cos(x)},
+    \lim_{x \to \pi}\cos({x^3})= \cos\Bigl({\lim_{x \to \pi} x^3}\Bigr)=\cos({\pi^3})\approx 0.91726.
     \]
-    and now since cosine is continuous for all real numbers,
-    \begin{align*}
-    \sqrt{\lim_{x \to 0} \cos(x)} & =\sqrt{\cos(0)}\\
-    &= \sqrt{1}\\
-    &= 1.
-    \end{align*}
+   
   \begin{onlineOnly}
-    We can confirm our results by checking out the graph of $y=f(x)$:
+    We can confirm our results by checking out the graph of $y=f(g(x))$:
     \[
-    \graph{\sqrt{\cos{x}}}
+    \graph{\cos({x^3})}
     \]
   \end{onlineOnly}
   \end{explanation}
@@ -183,9 +356,7 @@ limit, and exactly what to do in those cases.
 The most important thing to learn from this section is whether the
 limit laws can be applied for a certain problem, and when we need to
 do something more interesting.  We will begin discussing those more
-interesting cases in the next section.  For now, we end this section
-with a question:
-
+interesting cases in the next section.  
 \section{A list of questions}
 
 Let's try this out.
@@ -195,6 +366,7 @@ Let's try this out.
   \[
   \lim_{x\to 2}\frac{x^2+3x+2}{x+2} 
   \]
+  \begin{prompt}
   \begin{multipleChoice}
     \choice[correct]{yes}
     \choice{no}
@@ -211,6 +383,7 @@ Let's try this out.
       plug $2$ into $f(x)$.
     \end{feedback}
   \end{question}
+  \end{prompt}
 \end{question}
 
 
@@ -219,6 +392,7 @@ Let's try this out.
   \[
   \lim_{x\to 2}\frac{x^2-3x+2}{x-2}
   \]
+  \begin{prompt}
   \begin{multipleChoice}
     \choice{yes}
     \choice[correct]{no}
@@ -229,6 +403,7 @@ Let's try this out.
     theorems address the situation when the denominator of a fraction
     approaches $0$.
   \end{feedback}
+  \end{prompt}
 \end{question}
 
 
@@ -237,6 +412,7 @@ Let's try this out.
   \[
   \lim_{x\to 0} x\sin(1/x)
   \]
+  \begin{prompt}
   \begin{multipleChoice}
     \choice{yes}
     \choice[correct]{no}
@@ -259,6 +435,7 @@ Let's try this out.
     \]does not exist.  Therefore, we cannot use the
     Product Law.
   \end{feedback}
+  \end{prompt}
 \end{question}
 
 
@@ -267,6 +444,7 @@ Let's try this out.
   \[
   \lim_{x\to 0} \cot(x^3)
   \]
+  \begin{prompt}
   \begin{multipleChoice}
     \choice{yes}
     \choice[correct]{no}
@@ -293,6 +471,7 @@ Let's try this out.
   This means that the denominator is zero and hence we cannot use the
   Quotient Law.
   \end{feedback}
+  \end{prompt}
 \end{question}
 
 
@@ -301,6 +480,7 @@ Let's try this out.
   \[
   \lim_{x\to 0}\sec^2(e^x-1)
   \]
+  \begin{prompt}
   \begin{multipleChoice}
     \choice[correct]{yes}
     \choice{no}
@@ -325,8 +505,10 @@ Let's try this out.
       denominator is not $0$.  Let's check the denominator and numerator
       separately. First we'll compute the limit of the denominator:
       \begin{align*}
-        \lim_{x\to 0}\cos^2(e^x-1) &= \cos^2(\lim_{x\to 0}(e^x-1))\\
-        &=\cos^2(\lim_{x\to 0}(e^x)-\lim_{x\to 0}(1))\\
+        \lim_{x\to 0}\cos^2(e^x-1) &= (\lim_{x\to 0}\cos{(e^x-1)})^{2}\\
+        &= \Bigl(\cos{\Big(\lim_{x\to 0}(e^x-1)\Bigr)}\Bigr)^{2}\\
+        & =\cos^2\Bigl(\lim_{x\to 0}(e^x-1)\Bigr)\\
+        &=\cos^2\Bigl(\lim_{x\to 0}(e^x)-\lim_{x\to 0}(1)\Bigr)\\
         &=\cos^2(1-1)\\
         &= \cos^2(0)\\
         &=1
@@ -343,6 +525,7 @@ Let's try this out.
       \]
     \end{feedback}
   \end{question}
+  \end{prompt}
 \end{question}
 
 
@@ -351,6 +534,7 @@ Let's try this out.
   \[
   \lim_{x\to 1}{(x-1)\cdot \csc(\ln(x))}
   \]
+  \begin{prompt}
   \begin{multipleChoice}
     \choice{yes}
     \choice[correct]{no}
@@ -388,6 +572,7 @@ Let's try this out.
   \end{align*}
   Since the denominator is $0$, we cannot apply the Quotient Law.
   \end{feedback}
+  \end{prompt}
 \end{question}
 
 \begin{question}
@@ -395,6 +580,7 @@ Let's try this out.
   \[
   \lim_{x\to 0} x\ln x
   \]
+  \begin{prompt}
   \begin{multipleChoice}
     \choice{yes}
     \choice[correct]{no}
@@ -410,6 +596,7 @@ Let's try this out.
   not know how to find $\lim_{x\to 0}\ln x$ using limit laws because $0$
   is not in the domain of $\ln x$.
   \end{feedback}
+  \end{prompt}
 \end{question}
 
 
@@ -418,6 +605,7 @@ Let's try this out.
   \[
   \lim_{x\to0}\frac{2^x-1}{3^{x-1}}
   \]
+  \begin{prompt}
   \begin{multipleChoice}
     \choice[correct]{yes}
     \choice{no}
@@ -458,6 +646,7 @@ Let's try this out.
         \]
     \end{feedback}
   \end{question}
+  \end{prompt}
 \end{question}
 
 
@@ -466,6 +655,7 @@ Let's try this out.
   \[
   \lim_{x\to 0}(1+x)^{1/x}
   \]
+  \begin{prompt}
   \begin{multipleChoice}
     \choice{yes}
     \choice[correct]{no}
@@ -473,6 +663,7 @@ Let's try this out.
   \begin{feedback}
   We do not have any limit laws for functions of the form $f(x)^{g(x)}$, so we cannot compute this limit.
   \end{feedback}
+  \end{prompt}
 \end{question}
 
 \end{document}

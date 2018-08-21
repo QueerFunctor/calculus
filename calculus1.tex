@@ -2,29 +2,27 @@
 
 \input{preamble.tex}
 
-
-
-%\iftikzexport\else
 \pdfOnly{\usepackage{printStyles/lulu1}}
-%\fi
+
+\logo{logos/calculus1Logo/logo.png}
 
 \title{Calculus 1}
-
 \begin{document}
 \maketitle
 
 \setcounter{tocdepth}{2}
 \begin{onlineOnly}
 %% How to use
-\chapterstyle
+%\chapterstyle
 \activity{ximeraTutorial/titlePage.tex}
-\sectionstyle
+%\sectionstyle
 \activity{ximeraTutorial/howToUseXimera.tex}
 \activity{ximeraTutorial/howIsMyWorkScored.tex}
 \end{onlineOnly}
 
 %\part{Functions, limits, and continuity}
-\part{Content for the First Exam}
+%\part{Content for the First Exam}
+
 
 %% Understanding Functions
 \chapterstyle
@@ -40,7 +38,6 @@
 \chapterstyle
 \activity{reviewOfFamousFunctions/titlePage.tex}
 \sectionstyle
-
 \activity{reviewOfFamousFunctions/breakGround.tex}
 \activity{reviewOfFamousFunctions/digInPolynomialFunctions.tex}
 \activity{reviewOfFamousFunctions/digInRationalFunctions.tex}
@@ -54,6 +51,7 @@
 \sectionstyle
 \activity{whatIsALimit/breakGround.tex}
 \activity{whatIsALimit/digInWhatIsALimit.tex}
+\activity{whatIsALimit/digInContinuity.tex}
 
 
 
@@ -62,7 +60,6 @@
 \activity{limitLaws/titlePage.tex}
 \sectionstyle
 \activity{limitLaws/breakGround.tex}
-\activity{limitLaws/digInContinuity.tex}
 \activity{limitLaws/digInLimitLaws.tex}
 \activity{limitLaws/digInTheSqueezeTheorem.tex}
 
@@ -77,7 +74,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\activity{samplePractice/samplePractice.tex}
+%\activity{samplePractice/samplePractice.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% Using limits to detect asymptotes
@@ -87,7 +84,7 @@
 \activity{asymptotesAsLimits/breakGround.tex}
 \activity{asymptotesAsLimits/digInVerticalAsymptotes.tex}
 \activity{asymptotesAsLimits/digInHorizontalAsymptotes.tex}
-\activity{asymptotesAsLimits/digInSlantAsymptotes.tex}
+%\activity{asymptotesAsLimits/digInSlantAsymptotes.tex}
 
 
 
@@ -101,20 +98,17 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\activity{samplePractice/samplePractice2.tex}
+%\activity{exams/calculus1/examReviews/examOneReview.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\part{Content for the Second Exam}
 
 %% An application of limits
 \chapterstyle
-\activity{anApplicationOfLimits/titlePage.tex} 
+\activity{anApplicationOfLimits/titlePage.tex}
 \sectionstyle
 \activity{anApplicationOfLimits/breakGround.tex}
 \activity{anApplicationOfLimits/digInInstantaneousVelocity.tex}
-
-
-\part{Content for the Second Exam}
-
-
 
 %\part{Derivatives}
 
@@ -189,7 +183,7 @@
 \activity{implicitDifferentiation/breakGround.tex}
 \activity{implicitDifferentiation/digInImplicitDifferentiation.tex}
 %% Derivatives of inverse functions %%%%%CHANGE
-\activity{derivativesOfInverseFunctions/digInDerivativesOfInverseExponentialFunctions.tex}
+\activity{implicitDifferentiation/digInDerivativesOfInverseExponentialFunctions.tex}
 %%\activity{derivativesOfInverseFunctions/digInDerivativesOfInverseTrigonometricFunctions.tex}
 %%\activity{derivativesOfInverseFunctions/digInInverseFunctionTheorem.tex}
 
@@ -202,6 +196,12 @@
 \activity{logarithmicDifferentiation/digInLogarithmicDifferentiation.tex}
 
 
+\chapterstyle %%%%%CHANGE
+\activity{derivativesOfInverseFunctions/titlePage.tex}
+\sectionstyle
+\activity{derivativesOfInverseFunctions/breakGround.tex}
+\activity{derivativesOfInverseFunctions/digInDerivativesOfInverseTrigonometricFunctions.tex}
+\activity{derivativesOfInverseFunctions/digInInverseFunctionTheorem.tex}
 
 %% %% More than one rate %%%%%CHANGE
 \chapterstyle
@@ -218,12 +218,6 @@
 \activity{appliedRelatedRates/digInAppliedRelatedRates.tex}
 
 
-\chapterstyle %%%%%CHANGE
-\activity{derivativesOfInverseFunctions/titlePage.tex}
-\sectionstyle
-\activity{derivativesOfInverseFunctions/breakGround.tex}
-\activity{derivativesOfInverseFunctions/digInDerivativesOfInverseTrigonometricFunctions.tex}
-\activity{derivativesOfInverseFunctions/digInInverseFunctionTheorem.tex}
 
 
 %% Maximums and Minimums  %%%CHANGE
@@ -234,6 +228,11 @@
 \activity{maximumsAndMinimums/digInMaximumsAndMinimums.tex}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\activity{exams/calculus1/examReviews/examTwoReview.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\part{Content for the Third Exam}
 
 %% Concepts of graphing functions %%%CHANGE
 \chapterstyle
@@ -250,7 +249,7 @@
 \activity{computationsForGraphingFunctions/digInComputationsForGraphingFunctions.tex}
 
 
-\part{Content for the Third Exam}
+
 
 %% %% Mean Value Theorem  %%%CHANGE
 \chapterstyle
@@ -371,11 +370,11 @@
 \activity{lhopitalsRule/digInLhopitalsRule.tex}
 
 %% %% Differential equations
-\chapterstyle
-\activity{introductionToDifferentialEquations/titlePage.tex}
-\sectionstyle
-\activity{introductionToDifferentialEquations/breakGround.tex}
-\activity{introductionToDifferentialEquations/digInDifferentialEquations.tex}
+%\chapterstyle
+%\activity{introductionToDifferentialEquations/titlePage.tex}
+%\sectionstyle
+%\activity{introductionToDifferentialEquations/breakGround.tex}
+%\activity{introductionToDifferentialEquations/digInDifferentialEquations.tex}
 
 %% %% Antiderivatives
 \chapterstyle
@@ -386,13 +385,20 @@
 \activity{antiderivatives/digInFallingObjects.tex}
 
 
-%% %% Approximating the area under a curve
+ %% %%Approximating the area under a curve
 \chapterstyle
 \activity{approximatingTheAreaUnderACurve/titlePage.tex}
 \sectionstyle
 \activity{approximatingTheAreaUnderACurve/breakGround.tex}
+\activity{approximatingTheAreaUnderACurve/digInSigmaNotation.tex}
 \activity{approximatingTheAreaUnderACurve/digInApproximatingAreaWithRectangles.tex}
 
+ %% %%The definite integral
+\chapterstyle
+\activity{definiteIntegral/titlePage.tex}
+\sectionstyle
+\activity{definiteIntegral/breakGround.tex}
+\activity{definiteIntegral/digInTheDefiniteIntegral.tex}
 
 %% %% Antiderivatives and area
 \chapterstyle
@@ -401,12 +407,7 @@
 \activity{antiderivativesAndArea/breakGround.tex}
 \activity{antiderivativesAndArea/digInRelatingVelocityAndPositionAntiderivativesAndAreas.tex}
 
-%% %% The definite integral
-\chapterstyle
-\activity{definiteIntegral/titlePage.tex}
-\sectionstyle
-\activity{definiteIntegral/breakGround.tex}
-\activity{definiteIntegral/digInTheDefiniteIntegral.tex}
+
 
 %% %% The First Fundamental Theorem of Calculus
 \chapterstyle
@@ -423,7 +424,11 @@
 \activity{secondFundamentalTheoremOfCalculus/digInSecondFundamentalTheoremOfCalculus.tex}
 \activity{secondFundamentalTheoremOfCalculus/digInATaleOfThreeIntegrals.tex}
 
-\part{Additional content for the Final Exam}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\activity{exams/calculus1/examReviews/examThreeReview.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\part{Additional content for the Final Exam}
 
 
 %% %% Applications of integrals

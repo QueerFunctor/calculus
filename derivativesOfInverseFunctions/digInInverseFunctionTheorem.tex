@@ -37,7 +37,7 @@ $f'(a) \neq 0$, then
   \[
   f(f^{-1}(x)) = x,
   \]
-  and now we use implicit differentiation (and the chain rule) to
+  and now we use the chain rule to
   write
   \begin{align*}
   \ddx f(f^{-1}(x)) &= f'(f^{-1}(x)) (f^{-1})'(x)\\
@@ -52,44 +52,50 @@ $f'(a) \neq 0$, then
 \end{theorem}
 
 It is worth giving one more piece of evidence for the formula above,
-this time based on differentials. Consider this plot of a function $f$ and its inverse:
+this time based on increments in function, $\Delta f$, and increments in variable, $\Delta x$. Consider this plot of a function $f$ and its inverse:
 \begin{image}
 \begin{tikzpicture}
 	\begin{axis}[
-            xmin=-.5,xmax=5,ymin=-1,ymax=5,
+            xmin=-.5,xmax=6,ymin=-.5,ymax=6,
             axis lines=center,
+             unit vector ratio*=1 1 1,
+              width=4in,
             xlabel=$x$, ylabel=$y$,
             every axis y label/.style={at=(current axis.above origin),anchor=south},
             every axis x label/.style={at=(current axis.right of origin),anchor=west},
           ]        
-          \addplot [very thick, penColor, smooth, domain=(-.5:6)] {e^x};
+          \addplot [very thick, penColor, smooth, domain=(-.5:5)] {e^x};
           \addplot [very thick, penColor2, samples=100, smooth, domain=(.002:6)] {ln(x)};
           \addplot [dashed, textColor, domain=(-.5:6)] {x};
-          \node at (axis cs:1,4) [penColor] {$f$};
-          \node at (axis cs:4,1) [penColor2] {$f^{-1}$};
+          \node at (axis cs:1.2,4) [penColor] {$f$};
+          \node at (axis cs:4,1.6) [penColor2] {$f^{-1}$};
 
-          \addplot [draw=black,->] plot coordinates {(1,e) (1.5,e)};
-	  \addplot [draw=black,->] plot coordinates {(1.5,e) (1.5,1.5*e)};
+          \addplot [draw=black,->] plot coordinates {(1,e) (1.6,e)};
+	  \addplot [draw=black,->] plot coordinates {(1.6,e) (1.6,1.8*e)};
           \addplot[color=penColor3,fill=penColor3,only marks,mark=*] coordinates{(1,e)};  %% closed hole            
-          \node at (axis cs:1.25,e) [below] {$\d x$};
-          \node at (axis cs:1.5,3.4) [right] {$\d f$};
+          \node at (axis cs:1.25,e) [below] {$\Delta x$};
+          \node at (axis cs:1.54,3.8) [right] {$\Delta f$};
 
-          \addplot [draw=black,->] plot coordinates {(e,1) (e,1.5)};
-	  \addplot [draw=black,->] plot coordinates {(e,1.5) (1.5*e,1.5)};
+          \addplot [draw=black,->] plot coordinates {(1.8*e,1) (1.8*e,1.6)};
+	  \addplot [draw=black,->] plot coordinates {(e,1) (1.8*e,1)};
           \addplot[color=penColor3,fill=penColor3,only marks,mark=*] coordinates{(e,1)};  %% closed hole            
-          \node at (axis cs:e,1.25) [left] {$\d x$};
-          \node at (axis cs:3.4,1.5) [above] {$\d f$};
+          \node at (axis cs:5.9,1.3) [left] {$\Delta f^{-1}$};
+          \node at (axis cs:3.8,0.6) [above] {$\Delta x$};
         \end{axis}
 \end{tikzpicture}
 %% \caption{A plot of $e^x$ and $\ln(x)$. Since they are inverse
 %%   functions, they are reflections of each other across the line $y=x$.}
 %% \label{plot:e^x lnx}
 \end{image}
-Since the inverse of a function is the reflection of the function over
-the line $y=x$, we see that the differentials are ``switched'' when
+Since the graph of the inverse of a function is the reflection of the graph of the function over
+the line $y=x$, we see that the increments are ``switched'' when
 reflected. Hence we see that
 \[
-\dd[f^{-1}]{x} = \dd[x]{f}.
+\dfrac{\Delta f^{-1}}{\Delta{x}} = \dfrac{\Delta x}{\Delta f}=\dfrac{1}{\dfrac{\Delta f}{\Delta x}}.
+\]
+Taking the limit as $\Delta x$ goes to $0$, we can obtain the expression for the derivative of $f^{-1}$. \\
+\[
+\dfrac{d f^{-1}}{d{x}} = \dfrac{1}{\dfrac{d f}{d x}}
 \]
 
 The inverse function theorem gives us a recipe for computing the
@@ -102,8 +108,8 @@ derivatives of inverses of functions at points.
   \begin{array}{|c|c|c|}\hline
     x & f  & f' \\ \hline \hline
     2 & 0  & 2  \\ \hline
-    3 & 1  & -2 \\ \hline
-    4 & -3 & 0  \\ \hline
+    3 &1  &5 \\ \hline
+    4 & 3 & 0  \\ \hline
   \end{array}
   \]
   Compute
@@ -113,11 +119,11 @@ derivatives of inverses of functions at points.
   \begin{explanation}
     From the table above we see that
     \[
-    1 = f(\answer[given]{3}).
+    1 = f(\answer [given]{3}).
     \]
     Hence, by the inverse function theorem
     \[
-    \left(f^{-1}\right)' (1)= \frac{1}{f'(\answer[given]{3})} = \answer[given]{\frac{-1}{2}}.
+    \left(f^{-1}\right)' (1)= \frac{1}{f'(\answer[given]{3})} = \answer[given]{\frac{1}{5}}.
     \]
   \end{explanation}
 \end{example}
@@ -131,8 +137,8 @@ If one example is good, two are better:
   \begin{array}{|c|c|c|}\hline
     x & f  & f' \\ \hline \hline
     2 & 0  & 2  \\ \hline
-    3 & 1  & -2 \\ \hline
-    4 & -3 & 0  \\ \hline
+    3 & 1  &5 \\ \hline
+    4 & 3 & 0  \\ \hline
   \end{array}
   \]
   Compute
@@ -164,21 +170,21 @@ Finally, let's see an example where the theorem does not apply.
   \begin{array}{|c|c|c|}\hline
     x & f  & f' \\ \hline \hline
     2 & 0  & 2  \\ \hline
-    3 & 1  & -2 \\ \hline
-    4 & -3 & 0  \\ \hline
+    3 & 1  & 4 \\ \hline
+    4 & 3 & 0  \\ \hline
   \end{array}
   \]
   Compute
   \[
-  \eval{\ddx f^{-1}(x)}_{x=-3}
+  \eval{\ddx f^{-1}(x)}_{x=3}
   \]
   \begin{explanation}
     From the table above we see that
     \[
-    -3 = f(\answer[given]{4}).
+    3 = f(\answer[given]{4}).
     \]
     Ah! But here, $f'(\answer[given]{4}) = \answer[given]{0}$, so we have no guarantee that the
-    inverse exists near the point $x=-3$, but even if it did the inverse would not be differentiable there.
+    inverse exists near the point $x=3$, but even if it did the inverse would not be differentiable there.
       \end{explanation}
 \end{example}
 

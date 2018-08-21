@@ -3,30 +3,58 @@
 \newcommand{\todo}{}
 
 \usepackage{esint} % for \oiint
+\ifxake%%https://math.meta.stackexchange.com/questions/9973/how-do-you-render-a-closed-surface-double-integral
+\renewcommand{\oiint}{{\large\bigcirc}\kern-1.56em\iint}
+\fi
+
+
 \graphicspath{
-{./}
-{functionsOfSeveralVariables/}
-{normalVectors/}
-{lagrangeMultipliers/}
-{vectorFields/}
-{greensTheorem/}
-{shapeOfThingsToCome/}
+  {./}
+  {ximeraTutorial/}
+  {basicPhilosophy/}
+  {functionsOfSeveralVariables/}
+  {normalVectors/}
+  {lagrangeMultipliers/}
+  {vectorFields/}
+  {greensTheorem/}
+  {shapeOfThingsToCome/}
+  {dotProducts/}
+  {partialDerivativesAndTheGradientVector/}
+  {../productAndQuotientRules/exercises/}
+  {../normalVectors/exercisesParametricPlots/}
+  {../continuityOfFunctionsOfSeveralVariables/exercises/}
+  {../partialDerivativesAndTheGradientVector/exercises/}
+  {../directionalDerivativeAndChainRule/exercises/}
+  {../commonCoordinates/exercisesCylindricalCoordinates/}
+  {../commonCoordinates/exercisesSphericalCoordinates/}
+  {../greensTheorem/exercisesCurlAndLineIntegrals/}
+  {../greensTheorem/exercisesDivergenceAndLineIntegrals/}
+  {../shapeOfThingsToCome/exercisesDivergenceTheorem/}
+  {../greensTheorem/}
+  {../shapeOfThingsToCome/}
+  {../separableDifferentialEquations/exercises/}
 }
 
+\newcommand{\mooculus}{\textsf{\textbf{MOOC}\textnormal{\textsf{ULUS}}}}
 
-\usepackage{tkz-euclide}
-\tikzset{>=stealth} %% cool arrow head
+\usepackage{tkz-euclide}\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{arrows}
+\tikzset{>=stealth,commutative diagrams/.cd,
+  arrow style=tikz,diagrams={>=stealth}} %% cool arrow head
 \tikzset{shorten <>/.style={ shorten >=#1, shorten <=#1 } } %% allows shorter vectors
 
 \usetikzlibrary{backgrounds} %% for boxes around graphs
 \usetikzlibrary{shapes,positioning}  %% Clouds and stars
 \usetikzlibrary{matrix} %% for matrix
 \usepgfplotslibrary{polar} %% for polar plots
+\usepgfplotslibrary{fillbetween} %% to shade area between curves in TikZ
 \usetkzobj{all}
 \usepackage[makeroom]{cancel} %% for strike outs
 %\usepackage{mathtools} %% for pretty underbrace % Breaks Ximera
-\usepackage{multicol}
+%\usepackage{multicol}
 \usepackage{pgffor} %% required for integral for loops
+
 
 
 %% http://tex.stackexchange.com/questions/66490/drawing-a-tikz-arc-specifying-the-center
@@ -36,7 +64,7 @@
 
 
 \usepackage{array}
-\setlength{\extrarowheight}{+.1cm}   
+\setlength{\extrarowheight}{+.1cm}
 \newdimen\digitwidth
 \settowidth\digitwidth{9}
 \def\divrule#1#2{
@@ -52,7 +80,7 @@
 \newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
 
-\newcommand{\sage}{\textsf{SageMath}}
+\newcommand{\sagemath}{\textsf{SageMath}}
 
 
 %\renewcommand{\d}{\,d\!}
@@ -89,20 +117,20 @@
 \DeclareMathOperator{\arcsec}{arcsec}
 \DeclareMathOperator{\arccsc}{arccsc}
 \DeclareMathOperator{\si}{Si}
-\DeclareMathOperator{\proj}{\vec{proj}}
 \DeclareMathOperator{\scal}{scal}
 \DeclareMathOperator{\sign}{sign}
 
 
 %% \newcommand{\tightoverset}[2]{% for arrow vec
 %%   \mathop{#2}\limits^{\vbox to -.5ex{\kern-0.75ex\hbox{$#1$}\vss}}}
-\newcommand{\arrowvec}{\overrightarrow}
+\newcommand{\arrowvec}[1]{{\overset{\rightharpoonup}{#1}}}
 %\renewcommand{\vec}[1]{\arrowvec{\mathbf{#1}}}
-\renewcommand{\vec}{\mathbf}
+\renewcommand{\vec}[1]{{\overset{\boldsymbol{\rightharpoonup}}{\mathbf{#1}}}}
+\DeclareMathOperator{\proj}{\mathbf{proj}}
 \newcommand{\veci}{{\boldsymbol{\hat{\imath}}}}
 \newcommand{\vecj}{{\boldsymbol{\hat{\jmath}}}}
 \newcommand{\veck}{{\boldsymbol{\hat{k}}}}
-\newcommand{\vecl}{\boldsymbol{\l}}
+\newcommand{\vecl}{\vec{\boldsymbol{\l}}}
 \newcommand{\uvec}[1]{\mathbf{\hat{#1}}}
 \newcommand{\utan}{\mathbf{\hat{t}}}
 \newcommand{\unormal}{\mathbf{\hat{n}}}
@@ -119,7 +147,7 @@
 
 \renewcommand{\bar}{\overline}
 
-\colorlet{textColor}{black} 
+\colorlet{textColor}{black}
 \colorlet{background}{white}
 \colorlet{penColor}{blue!50!black} % Color of a curve in a plot
 \colorlet{penColor2}{red!50!black}% Color of a curve in a plot
@@ -181,7 +209,7 @@
 %\newenvironment{tchart}{\rowcolors{2}{}{background!90!textColor}\array}{\endarray}
 
 %%This is to help with formatting on future title pages.
-\newenvironment{sectionOutcomes}{}{} 
+\newenvironment{sectionOutcomes}{}{}
 
 
 
